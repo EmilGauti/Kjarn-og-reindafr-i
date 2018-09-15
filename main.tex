@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb, amsthm, marvosym, permute, extsizes}
+\usepackage{siunitx, graphicx, float, enumitem, adjustbox, hyperref, bm}
+\usepackage{microtype, dsfont}
+\usepackage[normalem]{ulem}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[icelandic]{babel}
+\newcommand{\explain}[2]{\underbrace{#1}_\textrm{$#2$}}
+
+\usepackage{minted}
+
+\title{\vspace{-3cm}Heimadæmi 1\\ \vspace{0.4cm} \large Kjarn og öreindafræði \vspace{-0.3cm}}
+\author{Emil Gauti Friðriksson}
+\begin{document}
+\maketitle
+\section*{Dæmi 1}
+Jafna (2.6) fyrir bindiorku tvívetniskjarna á bls. 15 í kennslubókinni gerir ráð fyrir að bindiorkan sé mun lægri en orkan sem fólgin er í kyrrstöðumassa kjarnans. Notið varðveislu orku og skriðþunga til að leiða út jöfnuna og áætlið skekkjuna í svarinu sem hún gefur miðað við nákvæma útreikninga.
+
+\subsection*{Svar}
+Byrjum á að rita upp jöfnu(2.6)
+\begin{align*}
+    B = (M_n + M_{^1H}-M_{^2H})\cdot c^2 = E_\gamma + \frac{E_\gamma ^2}{2M_{^2H}c^2} = 2.225 MeV
+\end{align*}
+
+\noindent Við vitum að eftirfarandi er satt:
+\begin{align*}
+    M_n c^2 + M_{^1H} c^2   &= B + M_{^2H}c^2\\
+    M_{^2H}c^2 + B          &= E_\gamma + \sqrt{M_{^2H}^2c^4 + p^2c^2}\\
+                            &= E_\gamma + M_{^2H}c^2\sqrt{1 + \frac{p^2c^2}{M_{^2H}^2c^4}} \\
+\text{(Taylor-liðun)}       &\approx E_\gamma + M_{^2H}c^2\left(1 + \frac{p^2c^2}{2M_{^2H}^2c^4}\right)\\
+                            &=E_\gamma +  M_{^2H}c^2 + \frac{p^2c^2}{2M_{^2H}c^2}\\
+                            &=E_\gamma +  M_{^2H}c^2 + \frac{E_\gamma}{2M_{^2H}c^2}\\
+\Rightarrow             B   &=E_\gamma + \frac{E_\gamma}{2M_{^2H}c^2}
+\end{align*}
+Skekkjan í svarinu kemur frá Taylor-nálguninni en hún er $O(p^4)$.
+
+
+\section*{Dæmi 2}
+Notið massaformúlu Weizsäckers til að leysa eftirfarandi verkefni.
+\begin{enumerate}[label=(\alph*)]
+    \item Hvaða sætistala Z gefur stöðugasta kjarna með tiltekna oddstæða massatölu A? Notið niðurstöðuna til að finna sætistölu stöðugasta kjarnans með A = 111.
+    \item Leiðið út eftirfarandi reglu um bindiorku fyrir samsætur með háa massatölu ef gert er ráð fyrir A sé oddstæð og Z jafnstæð: $$\frac { 1 } { 2 } ( B ( Z , A + 1 ) + B ( Z , A - 1 ) ) - B ( Z , A ) = \frac { \delta _ { 0 } } { A ^ { 1 / 2 } } + \ldots$$ þar sem $\delta_0 = 11.2$ MeV/$c^2$ og $\ldots$ stendur fyrir liði sem falla hraðar með vaxandi A.
+\end{enumerate}
+
+\section*{Dæmi 3}
+Kjarninn $^27$Si er $β^+$ geislavirkur og hámarksorka jáeinda sem myndast við hrörnunina er 3.8 MeV. Notið þessar upplýsingar til að áætla gildi fastans $a_c$ í Coulomb-lið massaformúlu Weizsäckers. Berið svarið saman við gildið sem gefið er upp á bls. 17 í kennslubókinni. Ábending: Byrjið á að kanna hvaða liðir í massaformúlunni eru hinir sömu fyrir móður- og dótturkjarnann.
+
+\subsection*{Svar}
+Við athugum að M(A,Z)>M(A,Z-1) og þessi mismunur á orku ætti að vera jafn orku jáeindarinnar. Til einföldunar þá notum við eftirfarandi:
+\begin{align*}
+    M(A,Z) &= \alpha A - \beta Z + \gamma Z^2 + \frac{\delta}{A^{1/2}}\\
+    \text{Þar sem:   } \alpha  &= M_n -a_v +a_sA^{-1/3} + \frac{a_a}{4}\\
+                    \beta   &= a_a + (M_n - M_p - m_e)\\
+                    \gamma  &= \frac{a_a}{A} + \frac{a_c}{A^{1/3}}\\
+                    \delta  &= 0
+\end{align*}
+þá reiknum við:
+\begin{align*}
+   3.8MeV   &= M(A,Z)-M(A,Z-1) \\
+            &=-\beta + 2\gamma Z - \gamma\\
+            &= -a_a - (M_n - M_p - m_e) +\explain{(2Z-1)}{=27}\gamma\\
+            &= -a_a - (M_n - M_p - m_e) + 27\left(\frac{a_a}{A=27}+\frac{a_c}{A^{1/3}=3}\right)\\
+            &= 9a_c \explain{- M_n + M_p + m_e}{= -0.783 MeV}\\
+            \Rightarrow a_c &= 0.509 MeV
+\end{align*}
+Þetta svar er ekki fjarri lagi gildinu sem gefið er í bókinni (0.714MeV)
+
+\end{document}
