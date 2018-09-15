@@ -36,6 +36,7 @@ Byrjum á að rita upp jöfnu(2.6)
                             &=E_\gamma +  M_{^2H}c^2 + \frac{E_\gamma}{2M_{^2H}c^2}\\
 \Rightarrow             B   &=E_\gamma + \frac{E_\gamma}{2M_{^2H}c^2}
 \end{align*}
+Athugum að skriðþungi ljóseindarinnar og skriðþungi $M_{^2H}$ hlýtur að vera sá sami vegna varðveislu skriðþungans og því gildir $E_\gamma = pc$\\
 Skekkjan í svarinu kemur frá Taylor-nálguninni en hún er $O(p^4)$.
 
 
@@ -46,8 +47,41 @@ Notið massaformúlu Weizsäckers til að leysa eftirfarandi verkefni.
     \item Leiðið út eftirfarandi reglu um bindiorku fyrir samsætur með háa massatölu ef gert er ráð fyrir A sé oddstæð og Z jafnstæð: $$\frac { 1 } { 2 } ( B ( Z , A + 1 ) + B ( Z , A - 1 ) ) - B ( Z , A ) = \frac { \delta _ { 0 } } { A ^ { 1 / 2 } } + \ldots$$ þar sem $\delta_0 = 11.2$ MeV/$c^2$ og $\ldots$ stendur fyrir liði sem falla hraðar með vaxandi A.
 \end{enumerate}
 
+
+\subsection*{Svar(a)}
+Athugum að M(Z,A) má reikna sem($\delta = 0$):
+\begin{align*}
+    M(Z,A) &= \alpha A - \beta Z + \gamma Z^2 + \delta\\
+    \text{Þar sem:   } \alpha  &= M_n -a_v +a_sA^{-1/3} + \frac{a_a}{4}\\
+                    \beta   &= a_a + (M_n - M_p - m_e)\\
+                    \gamma  &= \frac{a_a}{A} + \frac{a_c}{A^{1/3}}\\
+                    \delta  &= 0
+\end{align*}
+Athugum að bindiorkuna má reikna sem:
+\begin{align*}
+    B(Z,A)                                      &= [ZM(^1H) + (A-Z)M_n - M(A,Z)]c^2\\
+                                                &= [Z(M_p + m_e) + (A-Z)M_n - (\alpha A - \beta Z + \gamma Z^2)]c^2\\
+\text{diffrum: }\frac{\delta}{\delta Z}B(A,Z)   &=[M_p + m_e -M_n + \beta - 2\gamma Z]c^2\\
+                                                &=\left[M_p + m_e -M_n + a_a + M_n - M_p - m_e - 2\left(\frac{a_a}{A}+\frac{a_c}{A^{1/3}} \right)Z\right]c^2\\
+                                                &=\left[-2\left(\frac{a_a}{A}+\frac{a_c}{A^{1/3}} \right)Z+a_a\right]c^2\\
+                                \Rightarrow Z   &= \frac{a_a}{2\left(\frac{a_a}{A}+\frac{a_c}{A^{1/3}} \right)} \\
+                                                &= 47.15
+\end{align*}
+Hér fyrir ofan fundum við núllstöð $\frac{d}{dz} B(Z,A)$ í Z sem er hápunktur B(Z,A) og þar með stöðugasta ástandið sem fall af Z.
+
+
+
+
+
+
+
+
+
+
+
+
 \section*{Dæmi 3}
-Kjarninn $^27$Si er $β^+$ geislavirkur og hámarksorka jáeinda sem myndast við hrörnunina er 3.8 MeV. Notið þessar upplýsingar til að áætla gildi fastans $a_c$ í Coulomb-lið massaformúlu Weizsäckers. Berið svarið saman við gildið sem gefið er upp á bls. 17 í kennslubókinni. Ábending: Byrjið á að kanna hvaða liðir í massaformúlunni eru hinir sömu fyrir móður- og dótturkjarnann.
+Kjarninn $^27$Si er $\beta^+$ geislavirkur og hámarksorka jáeinda sem myndast við hrörnunina er 3.8 MeV. Notið þessar upplýsingar til að áætla gildi fastans $a_c$ í Coulomb-lið massaformúlu Weizsäckers. Berið svarið saman við gildið sem gefið er upp á bls. 17 í kennslubókinni. Ábending: Byrjið á að kanna hvaða liðir í massaformúlunni eru hinir sömu fyrir móður- og dótturkjarnann.
 
 \subsection*{Svar}
 Við athugum að M(A,Z)>M(A,Z-1) og þessi mismunur á orku ætti að vera jafn orku jáeindarinnar. Til einföldunar þá notum við eftirfarandi:
@@ -68,5 +102,7 @@ Við athugum að M(A,Z)>M(A,Z-1) og þessi mismunur á orku ætti að vera jafn 
             \Rightarrow a_c &= 0.509 MeV
 \end{align*}
 Þetta svar er ekki fjarri lagi gildinu sem gefið er í bókinni (0.714MeV)
+
+\section*{Dæmi 4}
 
 \end{document}
